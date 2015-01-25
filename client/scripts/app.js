@@ -3,7 +3,8 @@
 (function() {
   angular.module('bifrost',[
     'ui.router',
-    'lbServices'
+    'lbServices',
+    'ngMaterial'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -14,6 +15,9 @@
       .state('projects', {
         url: '/projects',
         templateUrl: 'views/projects.html'
+      }).state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html'
       });
 
     $urlRouterProvider.otherwise('main');
