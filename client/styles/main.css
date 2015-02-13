@@ -147,3 +147,8 @@ md-toolbar.project-toolbar .md-button {
 .stamp img {
 
 }
+
+.md-sidenav-right {
+  margin-top: 80px;
+  height: 300px;
+}
