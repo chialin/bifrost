@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {Panel, Button, Input} from 'react-bootstrap';
 import UserModel from '../models/UserModel';
+import PropTypes from 'prop-types';
 
 export default class Login extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
   state = {
     error: '',
     emailError: '',
@@ -76,7 +81,3 @@ export default class Login extends Component {
     );
   }
 }
-
-Login.contextTypes = {
-  router: React.PropTypes.object
-};

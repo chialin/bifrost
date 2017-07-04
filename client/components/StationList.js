@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { ProgressBar, Input } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 import { Link } from 'react-router';
 
 export default class StationList extends Component {
@@ -8,7 +8,7 @@ export default class StationList extends Component {
   }
 
   handleCheckbox() {
-    this.props.handleOfficialStations(this.refs.checkbox.getChecked());
+    this.props.handleOfficialStations(this.refs.checkbox.checked);
   }
 
   render() {
@@ -59,9 +59,12 @@ export default class StationList extends Component {
         { stations }
         <div className="official-list">
           <form>
-            <Input type="checkbox" label="顯示庫存物資站" ref="checkbox"
-              value={this.props.showOfficialStations}
-              onChange={this.handleCheckbox.bind(this)}/>
+            <label>
+              <input type="checkbox"
+                ref="checkbox"
+                value={this.props.showOfficialStations}
+                onChange={this.handleCheckbox.bind(this)} /> 顯示庫存物資站
+            </label>
           </form>
           <div className="official-stations">
             {officialStationsDescription}
